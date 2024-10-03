@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Калькулятор</title>
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <form id="calcForm">
+        <input type="number" id="num1" placeholder="Число 1">
+        <input type="number" id="num2" placeholder="Число 2">
+        <select id="operation">
+            <option value="add">Додавання</option>
+            <option value="subtract">Віднімання</option>
+            <option value="multiply">Множення</option>
+            <option value="divide">Ділення</option>
+        </select>
+        <button type="button" onclick="calculate()">Обчислити</button>
+    </form>
+    <p id="result">Результат: </p>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
