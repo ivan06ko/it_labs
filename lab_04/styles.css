@@ -19,17 +19,9 @@
       -webkit-font-smoothing: antialiased;
   }
 
-/*----------------
-    Global Styles
-  ----------------*/
-
 body {
   background-color: var(--background);
 }
-
-/*--------------
-    Typography
-  --------------*/
 
 h1,
 h2,
@@ -76,10 +68,6 @@ i {
     margin-right: 1.25rem;
 }
 
-/*----------
-    Layout
-  ----------*/
-
 .section-wrapper {
       margin-left: 1rem;
       margin-right: 1rem;
@@ -87,7 +75,7 @@ i {
 }
 
 .section-wrapper img {
-    max-width: 100%;
+    max-width: 110%;
 }
 
 /* hero section */
@@ -112,7 +100,6 @@ i {
     margin-top: 1.3125rem;
 }
 
-/* 2nd Section */
 .grid-2 img,
 .grid-3 img {
     margin-bottom: 1rem;
@@ -144,14 +131,11 @@ footer p {
     margin-bottom: 2.375rem;
 }
 
-/*---------------
-    Link/Button
-  ---------------*/
 .arrow, 
 .link {
     align-items: center;
     display: flex;
-    height: 4.5rem;
+    height: 4.6rem;
 }
 
 .arrow {

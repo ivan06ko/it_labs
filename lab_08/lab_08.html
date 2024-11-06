@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Файлова структура</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        .folder {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .folder-content {
+            display: none;
+            margin-left: 20px;
+        }
+
+        .open > .folder-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Файлова структура</h1>
+
+    <ul>
+        <li class="folder">📁 Films
+            <ul class="folder-content">
+                <li>📄 Iron Man.avi</li>
+                <li class="folder">📁 Fantasy
+                    <ul class="folder-content">
+                        <li>📄 The Lord of the Rings.avi</li>
+                        <li class="folder">📁 New folder 1
+                            <ul class="folder-content">
+                                <li>(empty)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="folder">📁 Documents
+            <ul class="folder-content">
+        <li>💀 empty</li>
+    </ul>
+
+    <script src="lab_08.js"></script>
+</body>
+</html>

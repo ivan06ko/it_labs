@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фільтр пошуку роботи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Кнопка для перемикання темного режиму -->
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+
+<!-- Фільтр -->
+<div class="filter-bar">
+    <input type="text" id="tagInput" placeholder="Введіть тег" oninput="highlightMatchingTags(event)" onkeypress="checkEnter(event)">
+    <div class="filter-tags"></div>
+    <span class="clear" onclick="clearFilters()">Clear</span>
+</div>
+
+<!-- Картки вакансій -->
+<div class="job-cards">
+    <div class="job-card" data-tags="Frontend Senior HTML CSS JavaScript">
+        <img src="images/kitten1.jpg" alt="Company Logo">
+        <div class="job-details">
+            <span class="company">Photosnap <span class="highlight">NEW! FEATURED</span></span>
+            <span class="title">Senior Frontend Developer</span>
+            <div>1d ago • Full Time • USA only</div>
+            <div class="tags">
+                <span class="tag">Frontend</span>
+                <span class="tag">Senior</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-card" data-tags="Frontend Junior CSS JavaScript">
+        <img src="images/kitten2.jpg" alt="Company Logo">
+        <div class="job-details">
+            <span class="company">MyHome</span>
+            <span class="title">Junior Frontend Developer</span>
+            <div>5d ago • Contract • USA only</div>
+            <div class="tags">
+                <span class="tag">Frontend</span>
+                <span class="tag">Junior</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-card" data-tags="Backend Node.js JavaScript">
+        <img src="images/kitten3.jpg" alt="Company Logo">
+        <div class="job-details">
+            <span class="company">Loop Studios</span>
+            <span class="title">Backend Developer</span>
+            <div>10d ago • Part Time • Remote</div>
+            <div class="tags">
+                <span class="tag">Backend</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-card" data-tags="Fullstack Senior React JavaScript">
+        <img src="images/kitten4.jpg" alt="Company Logo">
+        <div class="job-details">
+            <span class="company">BuildIt</span>
+            <span class="title">Senior Fullstack Developer</span>
+            <div>2d ago • Full Time • Remote</div>
+            <div class="tags">
+                <span class="tag">Fullstack</span>
+                <span class="tag">Senior</span>
+                <span class="tag">React</span>
+                <span class="tag">JavaScript</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-card" data-tags="Frontend Junior HTML CSS React">
+        <img src="images/kitten5.jpg" alt="Company Logo">
+        <div class="job-details">
+            <span class="company">Frontend Masters</span>
+            <span class="title">Junior Frontend Developer</span>
+            <div>3d ago • Contract • USA only</div>
+            <div class="tags">
+                <span class="tag">Frontend</span>
+                <span class="tag">Junior</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">React</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
