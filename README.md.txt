@@ -9,5 +9,5 @@
 [memory game] file:///C:/Users/777/Desktop/laboratory%20work/lab_09/index.html (не працює)
 [tanks]file:///C:/Users/777/Desktop/laboratory%20work/lab_10/index.html
 [job search]file:///C:/Users/777/Desktop/laboratory%20work/lab_11/index.html
-
+[pokemons] file:///C:/Users/777/Desktop/laboratory%20work/lab_12/index.html
 [user card] file:///C:/Users/777/Desktop/laboratory%20work/lab_13/index.html
