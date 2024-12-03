@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #b3e0ff; /* Світло-блакитний фон, як у моря */
+      color: #003366; /* Темно-синій текст */
+    }
+    .card {
+      border: 1px solid #66b3ff; /* Світло-синя рамка */
+      border-radius: 8px;
+      padding: 16px;
+      margin: 10px;
+      cursor: pointer;
+      background-color: #99ccff; /* Світло-блакитний фон картки */
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #66b3ff; /* Трохи темніший фон при ховері */
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 20px;
+    }
+    /* Модальне вікно */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #003366;
+    }
+    #logout-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0066cc; /* Синя кнопка */
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #logout-btn:hover {
+      background-color: #0055b3; /* Трохи темніший синій при ховері */
+    }
+    #login-btn {
+      padding: 10px 20px;
+      background-color: #0066cc; /* Синя кнопка */
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    #login-btn:hover {
+      background-color: #0055b3; /* Трохи темніший синій при ховері */
+    }
+    #login-section, #logout-section {
+      text-align: center;
+    }
+    /* Кнопка для музики */
+    #music-btn {
+      padding: 10px 20px;
+      background-color: #28a745; /* Зелена кнопка */
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      margin: 20px auto;
+      display: block;
+    }
+    #music-btn:hover {
+      background-color: #218838; /* Трохи темніший зелений при ховері */
+    }
+  </style>
+</head>
+<body>
+  <!-- Вставка фонової музики -->
+  <audio id="background-music" loop>
+    <source src="music/house_atmosphere.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1 style="text-align: center;">User Cards</h1>
+  <div id="login-section" style="text-align: center; margin: 20px;">
+    <button id="login-btn">Login</button>
+  </div>
+  <div id="user-cards" class="container"></div>
+
+  <!-- Модальне вікно -->
+  <div id="user-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="user-details"></div>
+    </div>
+  </div>
+
+  <!-- Кнопка для музики -->
+  <div id="music-section" style="text-align: center;">
+    <button id="music-btn">Play Music</button>
+  </div>
+
+  <!-- Кнопка виходу -->
+  <div id="logout-section" style="text-align: center; display: none;">
+    <button id="logout-btn">Log Out</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Отримуємо елементи для управління музикою
+    const musicButton = document.getElementById('music-btn');
+    const music = document.getElementById('background-music');
+
+    // Створюємо змінну для перевірки стану музики
+    let isPlaying = false;
+
+    // Додаємо подію на кнопку для вмикання/вимикання музики
+    musicButton.addEventListener('click', function() {
+      if (isPlaying) {
+        music.pause();
+        musicButton.textContent = 'Play Music'; // Змінюємо текст кнопки
+      } else {
+        music.play();
+        musicButton.textContent = 'Pause Music'; // Змінюємо текст кнопки
+      }
+      isPlaying = !isPlaying; // Змінюємо стан музики
+    });
+  </script>
+</body>
+</html>
