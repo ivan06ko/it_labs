@@ -1,24 +1,15 @@
-[Cars] file:///C:/Users/777/Desktop/laboratory%20work/lab_01/lab_01/index.html
-
-[black and white] file:///C:/Users/777/Desktop/laboratory%20work/lab_02/index.html
-
-[kitcheb] file:///C:/Users/777/Desktop/laboratory%20work/lab_01/lab_03/index.html
-
-[modern art] file:///C:/Users/777/Desktop/laboratory%20work/lab_04/index.html
-
-
-[resume]file:///C:/Users/777/Desktop/laboratory%20work/lab_06/lab_06/resume.html
-
-[guess number]file:///C:/Users/777/Desktop/laboratory%20work/lab_07/index.html
-
-[script] file:///C:/Users/777/Desktop/laboratory%20work/lab_08/index.html
-
-[memory game] file:///C:/Users/777/Desktop/laboratory%20work/lab_09/index.html (не працює)
-
-[tanks]file:///C:/Users/777/Desktop/laboratory%20work/lab_10/index.html
-
-[job search]file:///C:/Users/777/Desktop/laboratory%20work/lab_11/index.html
-
-[pokemons] file:///C:/Users/777/Desktop/laboratory%20work/lab_12/index.html
-
-[user card] file:///C:/Users/777/Desktop/laboratory%20work/lab_13/index.html
+[cars](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_01/lab_01/index.html)
+[food](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_01/lab_02/index.html)
+[kitchen](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_01/lab_03/index.html) 
+[apples](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_02/index.html)
+[planets](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_03/index.html)
+[museme](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_04/index.html)
+[calculator](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_05/index.html)
+[resume](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_06/about.html)
+[guess number](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_07/index.html)
+[file manager](https://html-preview.github.io/?url=ttps://github.com/ivan06ko/it_labs/blob/main/lab_08/index.html)
+[cards](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_09/index.html)-не працює в мене
+[tanks](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_10/index.html)
+[jobs filter](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_11/index.html)
+[pokemon](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_12/index.html)
+[dummyjson](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_13/index.html)
