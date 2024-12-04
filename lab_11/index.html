@@ -8,17 +8,14 @@
 </head>
 <body>
 
-<!-- Кнопка для перемикання темного режиму -->
 <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
 
-<!-- Фільтр -->
 <div class="filter-bar">
     <input type="text" id="tagInput" placeholder="Введіть тег" oninput="highlightMatchingTags(event)" onkeypress="checkEnter(event)">
     <div class="filter-tags"></div>
     <span class="clear" onclick="clearFilters()">Clear</span>
 </div>
 
-<!-- Картки вакансій -->
 <div class="job-cards">
     <div class="job-card" data-tags="Frontend Senior HTML CSS JavaScript">
         <img src="images/kitten1.jpg" alt="Company Logo">

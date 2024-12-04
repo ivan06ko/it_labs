@@ -1,47 +1,43 @@
-// Initial balance
 let balance = 100;
 let attempts = 0;
 let correctButton;
-const gameCost = 20; // Cost to start the game
+const gameCost = 20; 
 
-// Update balance display
 function updateBalance() {
     document.getElementById('balance').innerText = balance;
 }
 
-// Function to display a message on the page
 function displayMessage(message) {
     document.getElementById('message').innerText = message;
 }
 
-// Start game function
 function startGame() {
     if (balance < gameCost) {
         displayMessage("Not enough balance to start the game. You need at least $20.");
-        return; // Exit if the balance is insufficient
+        return; 
     }
 
     const startConfirmed = confirm(`The game costs $${gameCost}. Do you want to spend it to start?`);
 
     if (!startConfirmed) {
         displayMessage("Game not started.");
-        return; // Exit if the player cancels
+        return; 
     }
 
-    balance -= gameCost; // Deduct the cost from balance
-    updateBalance(); // Update balance display
-    displayMessage("Game started!"); // Display initial message
-    attempts = 0; // Reset attempts
-    correctButton = Math.floor(Math.random() * 5) + 1; // Randomly choose correct button (1 to 5)
+    balance -= gameCost; 
+    updateBalance(); 
+    displayMessage("Game started!"); 
+    attempts = 0; 
+    correctButton = Math.floor(Math.random() * 5) + 1; 
     
-    document.getElementById('inputSection').style.display = 'block'; // Show input section
-    document.getElementById('startBtn').style.display = 'none'; // Hide start button during the game
+    document.getElementById('inputSection').style.display = 'block';
+    document.getElementById('startBtn').style.display = 'none'; 
 }
 
 // Function to handle player's guess
 function makeGuess() {
     const guessInput = document.getElementById('guessInput').value;
-    const buttonIndex = parseInt(guessInput, 10); // Convert input to a number
+    const buttonIndex = parseInt(guessInput, 10); 
     attempts++;
     
     if (buttonIndex === correctButton) {
@@ -61,28 +57,26 @@ function makeGuess() {
     } else {
         if (attempts === 3) {
             displayMessage('Game over! No more attempts.');
-            resetGame(); // Reset game after 3 attempts
+            resetGame(); 
         } else {
             displayMessage('Wrong! Try again.');
         }
     }
     
-    updateBalance(); // Update balance display
+    updateBalance(); 
 }
 
-// Function to reset the game after win or loss
 function resetGame() {
-    document.getElementById('inputSection').style.display = 'none'; // Hide input section
-    document.getElementById('startBtn').style.display = 'block'; // Show start button again
+    document.getElementById('inputSection').style.display = 'none'; 
+    document.getElementById('startBtn').style.display = 'block'; 
     const playAgain = confirm("Do you want to play again?");
     if (playAgain) {
-        updateBalance(); // Update balance display
-        displayMessage(""); // Clear message after game resets
+        updateBalance(); 
+        displayMessage(""); 
     } else {
         displayMessage("Thanks for playing!");
     }
 }
 
-// Add event listeners
 document.getElementById('startBtn').addEventListener('click', startGame);
 document.getElementById('guessBtn').addEventListener('click', makeGuess);

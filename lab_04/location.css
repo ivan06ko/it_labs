@@ -5,9 +5,6 @@
     --background: #FFFFFF;
 }
 
-/*---------
-    Reset
-  ---------*/
 *,
 *::before,
 *::after {
@@ -18,18 +15,12 @@
     -webkit-font-smoothing: antialiased;
 }
 
-/*----------------
-    Global Styles
-  ----------------*/
 body {
     background-color: var(--background);
     font-family: 'Outfit', sans-serif;
     font-weight: 300; 
 }
 
-/*--------------
-    Typography
-  --------------*/
 footer p,
 h3,
 i {
@@ -67,9 +58,6 @@ i {
     font-size: 1.25rem;
 }
 
-/*----------
-    Layout
-  ----------*/
 main {
     background-color: var(--heading);
     padding: 3rem 1rem 3.5rem 1rem;
@@ -84,7 +72,6 @@ main {
     margin-bottom: 20px;
 }
 
-/* Footer */
 .info,
 .footer-wrapper {
     max-width: 21.4375rem;
@@ -100,7 +87,6 @@ footer {
     margin-bottom: 2.375rem;
 }
 
-/* Social Media Icons */
 .col-3 a {
     margin-right: 1.25rem;
 }
@@ -115,7 +101,6 @@ footer {
     filter: brightness(0.8);
 }
 
-/* Map */
 .image-container {
     position: relative;
     width: 100%;
@@ -129,7 +114,6 @@ footer {
     display: block;
 }
 
-/* Link/Button */
 .arrow-l,
 .home-link {
     align-items: center;
