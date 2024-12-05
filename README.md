@@ -23,7 +23,7 @@
 - [Guess Number](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_07/index.html)
 
 ## Lab 08: File Manager
-- [File Manager](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/tree/main/lab_08)
+- [File Manager](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_08/index.html)
 
 ## Lab 09: Cards
 - [Cards](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_09/index.html) - не працює
