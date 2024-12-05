@@ -88,3 +88,83 @@ p {
 h1:hover, h2:hover, .text-right:hover, .text-left:hover {
     color: #bbb; 
 }
+
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 1200px) {
+    .article img {
+        width: 40%;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-left, .text-right {
+        padding: 15px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .facts {
+        font-size: 20px;
+    }
+
+    .article img {
+        width: 50%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-left, .text-right {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .facts {
+        font-size: 18px;
+    }
+
+    .article img {
+        width: 70%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-left, .text-right {
+        text-align: center;
+    }
+}

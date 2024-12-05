@@ -1,19 +1,22 @@
-// Додає значення до дисплея
-function appendValue(value) {
-    document.getElementById('display').value += value;
-}
+window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.section');
+    const navLinks = document.querySelectorAll('nav ul li a');
 
-// Очищає дисплей
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
+    let currentSection = '';
 
-// Обчислює вираз
-function calculate() {
-    try {
-        const result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
-    } catch (error) {
-        alert('Помилка у виразі!');
-    }
-}
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+});
