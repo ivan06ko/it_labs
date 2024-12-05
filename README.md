@@ -14,7 +14,7 @@
 - [Museum](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_04/index.html)
 
 ## Lab 05: Resume
-- [Resume](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/tree/main/lab_05)
+- [Resume](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_05/about.html)
 
 ## Lab 06: Calculator
 - [Calculator](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/tree/main/lab_06)
