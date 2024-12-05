@@ -17,7 +17,7 @@
 - [Resume](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/tree/main/lab_05)
 
 ## Lab 06: Calculator
-- [Calculator](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_05/index.html)
+- [Calculator](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/tree/main/lab_06)
 
 ## Lab 07: Guess Number
 - [Guess Number](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_07/index.html)
