@@ -1,27 +1,38 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#game-board {
+    text-align: center;
+  }
+  
+  #game-board {
     display: grid;
-    grid-template-columns: repeat(6, 100px);
-    grid-gap: 10px;
-    margin-top: 20px;
-}
-
-.card {
-    width: 100px;
-    height: 100px;
-    background-color: lightgray;
-    border: 2px solid black; /* Додамо межі для карток */
-    background-size: cover;
-    cursor: pointer;
-    transition: background-image 0.3s ease;
-}
-
-.card.flipped {
-    cursor: default;
-}
+    grid-template-columns: repeat(4, 80px); /* 4 колонки */
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+  }
+  
+  .card {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    color: transparent;
+    border: 1px solid #999;
+  }
+  
+  .card.flipped {
+    color: black;
+    background-color: #fff;
+  }
+  
+  .card.matched {
+    background-color: #bbb;
+  }
+  
+  #attempts {
+    margin-top: 10px;
+  }
+  

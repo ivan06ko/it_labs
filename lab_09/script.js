@@ -1,87 +1,65 @@
-const cardImages = [
-    'assets/card1.png', 'assets/card2.png', 'assets/card3.png',
-    'assets/card4.png', 'assets/card5.png', 'assets/card6.png',
-    'assets/card7.png', 'assets/card8.png', 'assets/card9.png',
-    'assets/card10.png', 'assets/card11.png', 'assets/card12.png'
-];
-
-const cards = [...cardImages, ...cardImages]; // 12 пар карток
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-let attempts = 0;
-
-const gameBoard = document.getElementById('game-board');
+const board = document.getElementById('game-board');
 const attemptsDisplay = document.getElementById('attempts');
 
-// Перемішати картки
+// Можливі значення для карток (лише 8 пар)
+const cardValues = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F', 'G', 'G', 'H', 'H'];
+
+let shuffledValues = shuffle(cardValues);
+let flippedCards = [];
+let matchedCards = [];
+let attempts = 0;
+
+// Створюємо картки
+shuffledValues.forEach(value => {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.dataset.value = value;
+  card.textContent = value;
+  card.addEventListener('click', flipCard);
+  board.appendChild(card);
+});
+
+// Перемішуємо масив
 function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+  return array.sort(() => 0.5 - Math.random());
 }
 
-// Створити картки
-function createCards() {
-    const shuffledCards = shuffle(cards);
-    shuffledCards.forEach((cardImage, index) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.setAttribute('data-image', cardImage);
-        card.style.backgroundColor = 'lightgray'; // Колір для картки
-        card.addEventListener('click', flipCard);
-        gameBoard.appendChild(card);
-        console.log(`Card ${index + 1} created with image: ${cardImage}`); // Виведення для перевірки
-    });
-}
-
-// Відкрити картку
+// Перевертання картки
 function flipCard() {
-    if (lockBoard || this === firstCard) return;
+  if (this.classList.contains('flipped') || this.classList.contains('matched')) return;
+  if (flippedCards.length === 2) return;
 
-    const image = this.getAttribute('data-image');
-    console.log(`Flipping card with image: ${image}`); // Виведення для перевірки
+  this.classList.add('flipped');
+  flippedCards.push(this);
 
-    this.style.backgroundImage = `url(${image})`;
-    this.classList.add('flipped');
-
-    if (!firstCard) {
-        firstCard = this;
-        return;
-    }
-
-    secondCard = this;
-    lockBoard = true;
-
-    checkForMatch();
+  if (flippedCards.length === 2) checkForMatch();
 }
 
-// Перевірити на співпадіння
+// Перевірка на збіг
 function checkForMatch() {
-    const isMatch = firstCard.getAttribute('data-image') === secondCard.getAttribute('data-image');
-    console.log(`Matching ${firstCard.getAttribute('data-image')} with ${secondCard.getAttribute('data-image')}`);
+  attempts++;
+  attemptsDisplay.textContent = `Спроби: ${attempts}`;
 
-    if (isMatch) {
-        resetCards();
-    } else {
-        attempts++;
-        attemptsDisplay.textContent = attempts;
-        setTimeout(() => {
-            firstCard.style.backgroundImage = '';
-            firstCard.classList.remove('flipped');
-            secondCard.style.backgroundImage = '';
-            secondCard.classList.remove('flipped');
-            resetCards();
-        }, 1000);
-    }
+  const [card1, card2] = flippedCards;
+
+  if (card1.dataset.value === card2.dataset.value) {
+    card1.classList.add('matched');
+    card2.classList.add('matched');
+    matchedCards.push(card1, card2);
+    flippedCards = [];
+    checkGameOver();
+  } else {
+    setTimeout(() => {
+      card1.classList.remove('flipped');
+      card2.classList.remove('flipped');
+      flippedCards = [];
+    }, 1000);
+  }
 }
 
-// Скинути картки
-function resetCards() {
-    [firstCard, secondCard, lockBoard] = [null, null, false];
+// Перевірка завершення гри
+function checkGameOver() {
+  if (matchedCards.length === cardValues.length) {
+    setTimeout(() => alert('Вітаємо! Ви напевно закінчили гру!'), 500);
+  }
 }
-
-// Запустити гру
-createCards();
