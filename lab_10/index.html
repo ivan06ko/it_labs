@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Танки</title>
+    <title>Сітка Танків</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Список танків</h1>
-        <div class="grid">
-            <a href="details.html?tank=1"><img src="images/tanks1.jpg" alt="T-42A"></a>
-            <a href="details.html?tank=2"><img src="images/tanks2.jpg" alt="Maus"></a>
-            <a href="details.html?tank=3"><img src="images/tanks3.jpg" alt="FV215B"></a>
-        </div>
+    <div id="object-grid" class="grid-container">
+        // Картки танків з'являються тут 
     </div>
+
+    <div id="object-details" class="hidden">
+        <button id="back-to-grid">Назад</button>
+        <h2 id="detail-name"></h2>
+        <img id="detail-image" alt="">
+        <ul id="detail-description"></ul>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
