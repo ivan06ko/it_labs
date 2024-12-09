@@ -1,193 +1,185 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans); 
-
-body {
-    font-family: Arial, sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Open+Sans); 
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #000;
-    background-color: #fff;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #444;
+    line-height: 1.6;
+    background: #f7f7f7;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: url("images/apples.jpg") no-repeat center;
-    background-size: cover;
-    height: 100vh;
-    color: white;
+    background: #f8f9fa;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .brand {
-    font-size: 48px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    color: #333;
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-    gap: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-transform: uppercase;
-    font-size: 18px;
-    font-weight: bold;
+    text-decoration: none;
+    color: #555;
+    padding: 8px 16px;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    color: #007bff;
 }
 
-/* Styling for the tagline and button */
-.header-content {
+.hero {
+    position: relative;
+    height: 70vh;
+    background: url('images/apples.jpg') no-repeat center center/cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 50px;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.header-content p {
-    font-size: 24px;
-    margin-bottom: 20px;
+.hero-content h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
 }
 
-.btn {
+.hero-content button {
     padding: 10px 20px;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    font-size: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #fff;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-transform: uppercase;
+    transition: background 0.3s ease;
 }
 
-.btn:hover {
-    background-color: white;
-    color: black;
+.hero-content button:hover {
+    background: #007bff;
 }
 
-/* Articles section styling */
-.articles {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-.articles h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.article1, .article2 {
+.block1 {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
+    align-items: flex-start;
+    width: 80%;
+    margin: 20px auto;
+    gap: 20px;
 }
 
-.article1 img, .article2 img {
-    width: 30%;
-    border-radius: 5px;
+.left-text, .right-text {
+    width: 45%;
 }
 
-.article1 div, .article2 div {
-    flex-grow: 1;
-    padding: 0 20px;
-    text-align: left;
+.left-text p {
+    font-size: 1.2rem;
+    color: #333;
 }
 
-.article1 h3, .article2 h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.right-text p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
 }
 
-.article1 p:first-of-type, .article2 p:first-of-type {
-    font-size: 14px;
-    color: #999;
-}
-
-.article1 p, .article2 p {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-/* Footer section */
-footer {
-    background-color: #e8e8e8;
-    color: #000;
+.featured-articles {
     padding: 40px 20px;
-}
-
-.newsletter {
+    background: #ffffff;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.featured-articles h2 {
     margin-bottom: 30px;
+    color: #444;
 }
 
-.newsletter h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.newsletter form {
+.imagine1, .imagine2 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.newsletter input[type="email"] {
-    padding: 10px;
-    width: 250px;
-    border: none;
+.imagine1:hover, .imagine2:hover {
+    transform: scale(1.02);
+}
+
+.image-container img {
+    max-width: 300px;
+    height: auto;
     border-radius: 5px;
-    margin-right: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .newsletter button {
-    padding: 10px;
-    background-color: black;
-    color: white;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .newsletter button:hover {
-    background-color: #555;
+    background-color: #0056b3;
 }
 
-.footer-info {
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .footer-content {
     display: flex;
     justify-content: space-between;
-    text-align: left;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 20px;
 }
 
-.footer-info div {
-    width: 23%;
-}
-
-.footer-info h4 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.footer-info p {
-    font-size: 14px;
-    line-height: 1.6;
+footer p {
+    margin-top: 20px;
+    color: #ccc;
 }

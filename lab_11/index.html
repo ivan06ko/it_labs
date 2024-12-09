@@ -6,10 +6,7 @@
     <title>Фільтр пошуку роботи</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-<button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-
+<body class="dark-mode">
 <div class="filter-bar">
     <input type="text" id="tagInput" placeholder="Введіть тег" oninput="highlightMatchingTags(event)" onkeypress="checkEnter(event)">
     <div class="filter-tags"></div>

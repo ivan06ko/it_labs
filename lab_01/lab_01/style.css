@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Lato'); 
+ 
+body { 
+    font-family: 'Lato', sans-serif; 
+    font-size: 18px; 
+    color: #444444; 
+    margin: 0; 
+    padding: 0; 
+    background: #f9f9f9; 
+    line-height: 1.6;
+} 
+ 
+header { 
+    background: url(images/car-future.jpg) no-repeat center center/cover; 
+    height: 800px; 
+    position: relative; 
+} 
+ 
+header h1 { 
+    font-size: 60px; 
+    font-weight: bold; 
+    color: #a56748; 
+    text-transform: uppercase; 
+    margin: 0; 
+    padding: 80px 20px; 
+    background: rgba(255, 255, 255, 0.7); 
+    display: inline-block; 
+    border-radius: 5px; 
+} 
+ 
+nav { 
+    margin: 20px; 
+    float: left; 
+} 
+ 
+nav ul { 
+    margin: 0; 
+    padding: 10px; 
+    height: auto; 
+    display: flex; 
+    gap: 15px;
+} 
+ 
+nav ul li { 
+    display: inline-block; 
+} 
+ 
+nav a, 
+nav a:link, 
+nav a:active, 
+nav a:visited { 
+    text-transform: uppercase; 
+    color: #555; 
+    font-size: 1em; 
+    font-weight: bold; 
+    padding: 8px 12px; 
+    text-decoration: none; 
+    border-radius: 4px; 
+    transition: color 0.3s ease, background-color 0.3s ease; 
+} 
+ 
+nav a:hover { 
+    color: #ffffff; 
+    background-color: #a56748; 
+} 
+ 
+.content section { 
+    padding: 30px; 
+    background: #ffffff; 
+    margin: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    text-align: justify; 
+} 
+ 
+article { 
+    margin-bottom: 30px; 
+} 
+ 
+article img { 
+    width: 100%; 
+    max-width: 350px; 
+    height: auto; 
+    margin-right: 15px; 
+    float: left; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+} 
+ 
+article h2 { 
+    color: #a56748; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+    font-size: 24px; 
+} 
+ 
+article p { 
+    font-size: 18px; 
+    color: #555555; 
+    margin: 0; 
+    padding: 20px 0; 
+} 
+ 
+article p:first-of-type:first-letter { 
+    font-size: 34px; 
+    font-weight: bold; 
+    color: #a56748; 
+    text-transform: uppercase; 
+} 
+ 
+article:after { 
+    content: ''; 
+    display: block; 
+    clear: both; 
+} 
+ 
+footer { 
+    background-color: #555555; 
+    color: #ffffff; 
+    padding: 20px; 
+    text-align: center; 
+    margin-top: 20px;
+} 
+ 
+footer span { 
+    color: #ffffff; 
+    padding: 10px; 
+    font-size: 14px; 
+}
