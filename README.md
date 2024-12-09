@@ -26,7 +26,7 @@
 - [File Manager](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_08/index.html)
 
 ## Lab 09: Cards
-- [Cards](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_09/index.html) - не працює
+- [Cards](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_09/index.html)
 
 ## Lab 10: Tanks
 - [Tanks](https://html-preview.github.io/?url=https://github.com/ivan06ko/it_labs/blob/main/lab_10/index.html)
