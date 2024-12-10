@@ -1,59 +1,39 @@
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-}
-
 function highlightMatchingTags(event) {
-    const query = event.target.value.toLowerCase();
+    const input = event.target.value.toLowerCase();
     const jobCards = document.querySelectorAll('.job-card');
 
     jobCards.forEach(card => {
-        const tags = card.getAttribute('data-tags').toLowerCase();
-        if (tags.includes(query)) {
+        const tags = card.dataset.tags.toLowerCase();
+        const tagElements = card.querySelectorAll('.tag');
+
+        if (tags.includes(input)) {
             card.style.display = 'block';
+            tagElements.forEach(tag => {
+                if (tag.textContent.toLowerCase().includes(input)) {
+                    tag.classList.add('highlight');
+                } else {
+                    tag.classList.remove('highlight');
+                }
+            });
         } else {
             card.style.display = 'none';
+            tagElements.forEach(tag => tag.classList.remove('highlight'));
         }
     });
 }
 
-function checkEnter(event) {
-    if (event.key === 'Enter') {
-        addTag(event.target.value);
-        event.target.value = '';
-    }
-}
-
 function addTag(tag) {
-    const filterTags = document.querySelector('.filter-tags');
-    const tagElement = document.createElement('span');
-    tagElement.className = 'tag';
-    tagElement.textContent = tag;
-    tagElement.onclick = () => {
-        tagElement.remove();
-        filterJobs();
-    };
-    filterTags.appendChild(tagElement);
-    filterJobs();
+    const inputField = document.getElementById('tagInput');
+    inputField.value = tag;
+    inputField.dispatchEvent(new Event('input'));
 }
 
 function clearFilters() {
-    document.querySelector('.filter-tags').innerHTML = '';
-    filterJobs();
-}
-
-function filterJobs() {
-    const selectedTags = Array.from(document.querySelectorAll('.filter-tags .tag')).map(tag => tag.textContent.toLowerCase());
     const jobCards = document.querySelectorAll('.job-card');
-
     jobCards.forEach(card => {
-        const tags = card.getAttribute('data-tags').toLowerCase();
-        const matches = selectedTags.every(tag => tags.includes(tag));
-        card.style.display = matches ? 'block' : 'none';
+        card.style.display = 'block';
+        card.querySelectorAll('.tag').forEach(tag => tag.classList.remove('highlight'));
     });
-}
 
-// Load dark mode state
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
+    document.getElementById('tagInput').value = '';
 }

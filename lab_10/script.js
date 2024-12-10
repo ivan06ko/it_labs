@@ -40,6 +40,10 @@ function displayTanks() {
 // Функція для відображення деталей танка
 function displayTankDetails(index) {
     const selectedTank = tankData[index];
+
+    // Зберігаємо вибраний індекс у localStorage
+    localStorage.setItem('selectedTankIndex', index);
+
     document.getElementById('detail-name').textContent = selectedTank.name;
     document.getElementById('detail-image').src = selectedTank.image_url;
     document.getElementById('detail-description').innerHTML = selectedTank.description.map(desc => `<li>${desc}</li>`).join('');
@@ -52,7 +56,23 @@ function displayTankDetails(index) {
 document.getElementById('back-to-grid').addEventListener('click', () => {
     document.getElementById('object-details').classList.add('hidden');
     document.getElementById('object-grid').classList.remove('hidden');
+
+    // Очищуємо збережений індекс у localStorage
+    localStorage.removeItem('selectedTankIndex');
 });
 
+// Функція для перевірки збереженого стану
+function checkSavedState() {
+    const savedIndex = localStorage.getItem('selectedTankIndex');
+
+    if (savedIndex !== null) {
+        // Якщо збережено вибраний індекс, відобразити деталі танка
+        displayTankDetails(parseInt(savedIndex, 10));
+    } else {
+        // Якщо нічого не збережено, відобразити сітку
+        displayTanks();
+    }
+}
+
 // Ініціалізація
-displayTanks();
+checkSavedState();

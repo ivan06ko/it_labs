@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans); 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +6,15 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: #444;
+    font-family: Arial, sans-serif;
+    color: #333;
     line-height: 1.6;
-    background: #f7f7f7;
 }
 
 header {
-    background: #f8f9fa;
+    background: #fff;
     padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 nav {
@@ -28,9 +27,8 @@ nav {
 }
 
 nav .logo {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
 }
 
 nav ul {
@@ -44,13 +42,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #555;
+    color: #333;
     padding: 8px 16px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff;
 }
 
 .hero {
@@ -66,25 +59,30 @@ nav ul li a:hover {
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    letter-spacing: 1.5px;
+    font-size: 3rem;
+    letter-spacing: 2px;
 }
 
 .hero-content button {
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.6);
+    background: transparent;
     border: 1px solid #fff;
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-.hero-content button:hover {
-    background: #007bff;
+.content title{
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.content title .description {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
 }
 
 .block1 {
@@ -97,7 +95,7 @@ nav ul li a:hover {
 }
 
 .left-text, .right-text {
-    width: 45%;
+    width: 45%; 
 }
 
 .left-text p {
@@ -110,65 +108,115 @@ nav ul li a:hover {
     color: #666;
     line-height: 1.6;
 }
-
 .featured-articles {
     padding: 40px 20px;
-    background: #ffffff;
+    background: #f9f9f9;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .featured-articles h2 {
     margin-bottom: 30px;
-    color: #444;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    width: 80%;
+    margin: 20px auto;
+}
+.container {
+    background-color: transparent; 
 }
 
 .imagine1, .imagine2 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: 3/4;
     padding: 15px;
-    background: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
 }
 
-.imagine1:hover, .imagine2:hover {
-    transform: scale(1.02);
+.imagine1 .image-container {
+    order: 1;
+}
+
+.imagine1 .text-container {
+    order: 2;
+}
+
+.imagine2 .image-container {
+    order: 2;
+}
+
+.imagine2 .text-container {
+    order: 1;
+}
+
+.image-container {
+    position: relative;
 }
 
 .image-container img {
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
-    border-radius: 5px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.like {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.text-container {
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.newsletter {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.newsletter form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .newsletter input {
     padding: 10px;
     width: 300px;
     border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.newsletter button:hover {
-    background-color: #0056b3;
 }
 
 footer {
     background: #333;
     color: #fff;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 60px 20px;
 }
 
 footer .footer-content {
@@ -179,7 +227,11 @@ footer .footer-content {
     gap: 20px;
 }
 
+footer .footer-content .column {
+    flex: 1;
+}
+
 footer p {
+    text-align: center;
     margin-top: 20px;
-    color: #ccc;
 }

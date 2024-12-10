@@ -1,170 +1,167 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-body {
-    font-family: 'Open Sans', sans-serif;
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
-    background-color: #0a1223;
+}
+
+.nav {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.nav a {
+    color: #7a8599;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0D1B2A;
+    color: white;
+    padding: 20px;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 20px;
-    background-color: #101828;
-}
-
-nav ul {
-    display: flex;
-    gap: 15px;
-    padding: 10px 0;
-}
-
-header .facts {
-    font-size: 24px;
-    color: #ffffff;
-}
-
-.articles {
-    padding: 40px;
-}
-
-.article {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.article:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-.article:nth-child(even) {
-    flex-direction: row-reverse; 
-}
-
-.article img {
-    width: 30%;
-    border-radius: 5px;
-}
-
-.text-left, .text-right {
-    flex-grow: 1;
-    padding: 20px;
-    color: #fff;
-    transition: color 0.5s ease-in-out;
-}
-
-.text-right {
-    text-align: right;
-}
-
-h1, h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 h1 {
-    color: #fff;
-    transition: color 1s ease-in-out;
+    font-size: 28px;
+    color: #E0E1DD;
 }
 
-h2 {
-    color: #fff;
-    transition: color 1s ease-in-out;
+.highlight {
+    font-style: italic;
+    color: #A0D2DB;
 }
 
-p {
-    margin-bottom: 10px;
-    font-size: 16px;
+/* Секція фактів */
+.facts {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка на маленьких екранах */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-h1:hover, h2:hover, .text-right:hover, .text-left:hover {
-    color: #bbb; 
+.fact {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка на маленьких екранах */
+    gap: 20px;
+    align-items: center;
+    border: 2px solid #A0D2DB; /* Додано межі для коробок */
+    border-radius: 12px; /* Закруглення кутів */
+    overflow: hidden;
 }
 
-/* Media Queries for Responsive Design */
+.fact-text {
+    background-color: #1B263B;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-@media screen and (max-width: 1200px) {
-    .article img {
-        width: 40%;
+.fact h2 {
+    font-size: 22px;
+    color: #E0E1DD;
+}
+
+.fact p {
+    font-size: 18px;
+    color: #B1B1B1;
+}
+
+.fact img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #E0E1DD; /* Додано межі для зображень */
+}
+
+/* Адаптація для маленьких екранів */
+@media (max-width: 599px) {
+    body {
+        background-color: white;
+        color: black;
     }
 
-    .article {
-        flex-direction: column;
-        align-items: center;
+    .fact-text {
+        background-color: #f0f0f0;
+        color: black;
     }
 
-    .text-left, .text-right {
-        padding: 15px;
-        text-align: center;
+    h1 {
+        color: black;
     }
 
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 14px;
+    .highlight {
+        color: #007acc; /* Блакитний для контрасту */
     }
 }
 
-@media screen and (max-width: 768px) {
-    header .facts {
+/* Адаптація для середніх екранів (600px до 1024px) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .facts {
+        grid-template-columns: 1fr; /* Одна колонка для середніх екранів */
+    }
+
+    .fact {
+        display: grid;
+        grid-template-columns: 1fr; /* Текст зверху, зображення знизу */
+        grid-template-rows: auto auto;
+    }
+
+    .fact-text {
+        order: 1; /* Текст зверху */
+    }
+
+    .fact-image {
+        order: 2; /* Зображення знизу */
+    }
+}
+
+/* Адаптація для великих екранів */
+@media (min-width: 1024px) {
+    .facts {
+        grid-template-columns: repeat(2, 1fr); /* Дві колонки для великих екранів */
+        gap: 40px;
+    }
+
+    .fact {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto; /* Дві строки для тексту і фото */
+    }
+
+    /* Для непарних фактів (зліва) - текст зверху, зображення знизу */
+    .fact:nth-child(odd) .fact-text {
+        order: 1; /* Текст залишається першим */
+    }
+
+    .fact:nth-child(odd) .fact-image {
+        order: 2; /* Зображення після тексту */
+    }
+
+    /* Для парних фактів (справа) - зображення зверху, текст знизу */
+    .fact:nth-child(even) .fact-text {
+        order: 2; /* Текст після зображення */
+    }
+
+    .fact:nth-child(even) .fact-image {
+        order: 1; /* Зображення першим */
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .fact h2 {
+        font-size: 26px;
+    }
+
+    .fact p {
         font-size: 20px;
-    }
-
-    .article img {
-        width: 50%;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .article {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .text-left, .text-right {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    header .facts {
-        font-size: 18px;
-    }
-
-    .article img {
-        width: 70%;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 12px;
-    }
-
-    .article {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .text-left, .text-right {
-        text-align: center;
     }
 }

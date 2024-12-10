@@ -12,7 +12,6 @@ body {
     background-color: #444;
     padding: 10px 20px;
     border-bottom: 1px solid #555;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .filter-bar input {
@@ -25,10 +24,22 @@ body {
     margin-right: 10px;
 }
 
-.filter-bar .clear {
-    color: #ff5722;
+.tag-button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px;
+}
+
+.tag-button:hover {
+    background-color: #ff784e;
+}
+
+.tag-button:focus {
+    outline: none;
 }
 
 .job-cards {
@@ -46,25 +57,18 @@ body {
     padding: 15px;
     width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+.job-card .tags .tag {
+    background-color: #555;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-right: 5px;
+    display: inline-block;
 }
 
-.job-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.job-card .company {
-    font-weight: bold;
-}
-
-.job-card .highlight {
-    color: #ff5722;
-    margin-left: 5px;
+.job-card .tags .tag.highlight {
+    background-color: #ff5722;
+    color: #fff;
 }
